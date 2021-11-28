@@ -1,8 +1,9 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-LearnTypes()
+void LearnTypes()
 {
 	cout << "Please enter value" << endl;
 	int x = 0;
@@ -28,7 +29,13 @@ LearnTypes()
 }
 
 int main() {
-	cout << "Hello, World" << endl;
+	string s;
+
+	cout << "Input your name: ";
+		//cin >> s;
+		getline(cin , s); // захват строки с пробелами
+	cout << "Hello " << s << endl;
+	LearnTypes();
 	system("pause");
 	return 0;
 }
