@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -28,14 +29,35 @@ void LearnTypes()
 
 }
 
-int main() {
+void Hello()
+{
 	string s;
-
 	cout << "Input your name: ";
-		//cin >> s;
-		getline(cin , s); // захват строки с пробелами
+	//cin >> s;
+	getline(cin, s); // захват строки с пробелами
 	cout << "Hello " << s << endl;
-	LearnTypes();
+
+}
+
+struct Student {
+	string name;     //создание собственного типа данных     
+	double score;
+};
+
+int main() {
+	//Hello();
+	//LearnTypes();
+	int mass[5][2] = { };//инициализаци€ массивов.—татический массив
+	vector </*int*/ Student> group;//ћассив, в котором есть данные и их размер. ѕосле создание собственного типа данных мы можем задать vector<student> v;
+	size_t n = 0;
+	cin >> n;
+	group.resize(n);
+	/*Student s = { "ivan",5 };// отдаем значени€ дл€ нашего типа данных, которые после исполнени€ вывод€тс€ в массив
+	group[0] = s;
+	s.score -= 0.5;// »зменение среднего балла*/
+
+	group[0] = { "ivan", 5 };//ќптимизаци€. избавились от лишних элементов
+	group[0].score -= 0.5;
 	system("pause");
 	return 0;
 }
